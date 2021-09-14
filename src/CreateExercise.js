@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -7,12 +8,42 @@ function CreateExercise() {
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState("");
   const [date, setDate] = useState(new Date());
-  //   console.log([username, description, duration, date]);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/users", {
+        username: username,
+      })
+      .then((res) => {
+        if (res.data.length > 0) {
+          setUsers(res.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
   const storeExercise = (e) => {
     e.preventDefault();
     console.log([username, description, duration, date]);
+    axios
+      .post("http://localhost:5000/exercises/add", {
+        username: username,
+        description: description,
+        duration: Number(duration),
+        date: Date(date),
+      })
+      .then((res) => alert(res.data))
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setUsername("");
     setDescription("");
+    setDuration("");
+    setDate(new Date());
   };
 
   return (
@@ -22,11 +53,21 @@ function CreateExercise() {
         <div className="form-group mt-4">
           <label>Username: </label>
           <select
-            className="form-control"
+            className="form-select"
             value={username}
+            // onClick={updateUsersList()}
             onChange={(e) => setUsername(e.target.value)}
           >
-            {<option>test user 1</option>}
+            <option value="" disabled>
+              Select a User
+            </option>
+            {users.map((us) => {
+              return (
+                <option key={us._id} value={us.username}>
+                  {us.username}
+                </option>
+              );
+            })}
           </select>
         </div>
 
