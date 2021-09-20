@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -12,9 +13,7 @@ function CreateExercise() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users", {
-        username: username,
-      })
+      .get("http://localhost:5000/users")
       .then((res) => {
         if (res.data.length > 0) {
           setUsers(res.data);
@@ -23,11 +22,11 @@ function CreateExercise() {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   const storeExercise = (e) => {
     e.preventDefault();
-    console.log([username, description, duration, date]);
+
     axios
       .post("http://localhost:5000/exercises/add", {
         username: username,
@@ -35,7 +34,7 @@ function CreateExercise() {
         duration: Number(duration),
         date: Date(date),
       })
-      .then((res) => alert(res.data))
+      .then((res) => console.log(res.data))
       .catch((err) => {
         console.log(err);
       });
@@ -44,6 +43,13 @@ function CreateExercise() {
     setDescription("");
     setDuration("");
     setDate(new Date());
+
+    // <Link
+    //   to={{
+    //     pathname: "/",
+    //     state: setValue, // your data array of objects
+    //   }}
+    // />;
   };
 
   return (

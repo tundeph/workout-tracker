@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import Exercise from "./Exercise";
 
 function ExercisesList() {
   const [listExercises, setListExercises] = useState([]);
@@ -8,16 +8,29 @@ function ExercisesList() {
   useEffect(() => {
     axios
       .get("http://localhost:5000/exercises/", {})
-      .then((res) => setListExercises(res.data))
+      .then((res) => {
+        setListExercises(res.data);
+      })
       .catch((err) => console.log(err));
-  });
+  }, []);
+
+  const showExercises = () => {
+    axios
+      .get("http://localhost:5000/exercises/", {})
+      .then((res) => {
+        setListExercises(res.data);
+        // alert(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const deleteExercise = (id) => {
     axios
-      .delete("localhost:5000/exercises/" + id)
-      .then((res) => console.log(res.data))
+      .delete("http://localhost:5000/exercises/" + id)
+      .then((res) => {
+        showExercises();
+      })
       .catch((err) => console.log(err));
-    // console.log(id);
   };
 
   return (
@@ -26,17 +39,16 @@ function ExercisesList() {
       <div>
         {listExercises.map((data) => {
           return (
-            <div className="flex" key={data._id}>
-              <div> {data._id} </div>
-              <div> {data.username} </div>
-              <div> {data.description} </div>
-              <div> {data.duration} </div>
-              <div> {Date.parse(data.date)} </div>
-              <div>
-                <Link to="" onClick={() => deleteExercise(data._id)}>
-                  Delete
-                </Link>
-              </div>
+            <div className="" key={data._id}>
+              <Exercise
+                username={data.username}
+                description={data.description}
+                duration={data.duration}
+                date={data._date}
+                onPress={() => {
+                  deleteExercise(data._id);
+                }}
+              />
             </div>
           );
         })}

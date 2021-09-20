@@ -8,12 +8,10 @@ function CreateUser() {
     e.preventDefault();
     axios
       .post("http://localhost:5000/users/add", { username: username })
-      .then((res) => alert(res.data))
+      .then((res) => console.log(res.data))
       .catch((err) => {
         console.log(err);
       });
-
-    // console.log(username);
     setUsername("");
   };
 
