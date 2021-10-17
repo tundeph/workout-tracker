@@ -1,0 +1,7 @@
+.navbar-collapse {
+  justify-content: flex-end !important;
+}
+
+.navbar {
+  margin-bottom: 50px !important;
+}

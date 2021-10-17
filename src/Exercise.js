@@ -1,7 +1,7 @@
 import React from "react";
 import "./Exercise.css";
 
-function Exercise({ username, description, duration, date, id, onPress }) {
+function Exercise({ username, description, duration, date, onPress }) {
   var count = 0;
   return (
     <div

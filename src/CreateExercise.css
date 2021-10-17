@@ -1,0 +1,16 @@
+.checkbox__div {
+  padding: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border: 1px solid #949191;
+  border-radius: 10px;
+}
+
+.checkbox__div > input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox__div :focus {
+  border: 1px solid #881818;
+  border-radius: 0px;
+}
