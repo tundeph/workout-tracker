@@ -18,7 +18,7 @@ function App() {
         <ProtectedRoute path="/list" exact component={ExercisesList} />
         <ProtectedRoute path="/create" component={CreateExercise} />
         <ProtectedRoute path="/edit/:id" component={EditExercise} />
-        <Route path="/user" component={CreateUser} />
+        <ProtectedRoute path="/user" component={CreateUser} />
       </div>
     </Router>
   );
