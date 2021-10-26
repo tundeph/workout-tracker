@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import "./Login.css";
 import axios from "axios";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
 
+  useEffect(() => {
+    let token = localStorage.getItem("trackfit__token");
+    if (token !== null) {
+      history.push("/list");
+    }
+  }, []);
   const tryLogin = (e) => {
     e.preventDefault();
 
@@ -33,37 +41,63 @@ function Login() {
 
   return (
     <div>
-      <div className="container">
-        <h2> Login </h2>
-        <form>
-          <div className="form-group mt-4">
-            <label>Email: </label>
-            <input
-              type="email"
-              className="form-control"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+      <div className=" flex__container">
+        {/* Left Side Div */}
+        <div className="home__container">
+          <img
+            className="login__logo"
+            src="trackfit-logo.png"
+            alt="TrackFit logo"
+          />
+          <h2>
+            Measuring the world’s <br /> fitness routine
+          </h2>
 
-          <div className="form-group mt-4">
-            <label>Password: </label>
-            <input
-              type="password"
-              className="form-control"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+          <img
+            className="landing__pic"
+            src="landing-page-1.svg"
+            alt="Fitness Measurement"
+          />
+        </div>
 
-          <button
-            type="submit"
-            className=" btn btn-dark btn-lg btn-block mt-4"
-            onClick={tryLogin}
-          >
-            Log in
-          </button>
-        </form>
+        {/* Right Side Div */}
+        <div className="login__container">
+          <div className="login__container__inner">
+            <form>
+              <div className="form-group mt-4 form__div">
+                <PermIdentityOutlinedIcon fontSize="large" />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="form-control"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group mt-4 form__div">
+                <LockOutlinedIcon fontSize="large" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className="form-control"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="form-group mt-4 form__div">
+                <div></div>
+                <button
+                  type="submit"
+                  className=" btn red__button"
+                  onClick={tryLogin}
+                >
+                  Log in
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,2 +1,126 @@
+body {
+  --trackfit-red-color: #b71c1c;
+  --trackfit-dark-red-color: #9e1916;
+  --trackfit-orange-color: #f98806;
+  --trackfit-green-color: #72e294;
+  --trackfit-purple-color: #9668f7;
+  --trackfit-blue-color: #98c5ff;
+
+  --trackfit-dark-gray-color: #969696;
+  --trackfit-light-gray-color: #cccccc;
+  --trackfit-bg-gray-color: #f2f1f6;
+}
+
+.red__color {
+  color: var(--trackfit-red-color) !important;
+}
+
+.gray__color {
+  color: var(--trackfit-dark-gray-color) !important;
+}
+
+.light__gray__color {
+  color: var(--trackfit-light-gray-color) !important;
+}
+
+.orange__color {
+  color: var(--trackfit-orange-color) !important;
+}
+
+.green__color {
+  color: var(--trackfit-green-color) !important;
+}
+
+.purple__color {
+  color: var(--trackfit-purple-color) !important;
+}
+
+.blue__color {
+  color: var(--trackfit-blue-color) !important;
+}
+
 .App {
+}
+
+input[type="email"],
+input[type="password"],
+select {
+  height: 50px !important;
+  border-radius: 10px !important;
+  font: 20px "Helvetica Neue";
+  color: var(--trackfit-dark-gray-color) !important;
+  border-color: var(--trackfit-light-gray-color);
+  padding: 11px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: var(--trackfit-red-color) !important;
+  box-shadow: none !important;
+}
+
+input::placeholder {
+  color: var(--trackfit-light-gray-color) !important;
+}
+
+select {
+  background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjEuNDEgNC42NyAyLjQ4IDMuMTggMy41NCA0LjY3IDEuNDEgNC42NyIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIzLjU0IDUuMzMgMi40OCA2LjgyIDEuNDEgNS4zMyAzLjU0IDUuMzMiLz48L3N2Zz4=)
+    no-repeat 95% 50% !important ;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff !important;
+}
+
+.red__button {
+  background-color: var(--trackfit-red-color);
+  color: #ffffff;
+  font: bold 25px "Helvetica Neue" !important;
+  border-radius: 11px;
+  height: 50px !important;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.red__button:hover {
+  background-color: var(--trackfit-dark-red-color);
+  color: #ffffff;
+}
+
+.red__button:focus {
+  box-shadow: none;
+}
+
+h1 {
+  font: bold 6vmin "Helvetica Neue";
+}
+
+h2 {
+  font: bold 3.5vmin "Helvetica Neue";
+}
+
+h3 {
+  font: bold 3vmin "Helvetica Neue";
+}
+
+h4 {
+  font: bold 2.5vmin "Helvetica Neue";
+}
+
+h5 {
+  font: bold 2vmin "Helvetica Neue";
+}
+
+.white__box {
+  box-shadow: 0px 0px 7px #eae9ee;
+  border-radius: 10px !important;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.white__box:hover {
+  box-shadow: 0px 0px 7px #cccccc;
+  border-radius: 10px !important;
+  background-color: #fff;
 }

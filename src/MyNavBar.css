@@ -4,4 +4,17 @@
 
 .navbar {
   margin-bottom: 50px !important;
+  background-color: #fff !important ;
+}
+
+.menu__logo {
+  width: 8vw;
+  margin-top: 3vh;
+  min-width: 90px;
+}
+
+.nav-link {
+  font: bold 18px "Helvetica Neue";
+  margin-right: 1vw;
+  margin-left: 1vw;
 }

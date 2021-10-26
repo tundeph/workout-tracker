@@ -1,17 +1,18 @@
-.exercise {
-}
-
-.ex__box {
-  border-radius: 10px;
-  box-shadow: 2px 2px 15px #c4c4c4;
-  border: 0px;
-  min-height: 200px;
-  padding: 50px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 400px;
-}
-
 .ex__username {
   font-size: 30px;
+}
+
+.duration {
+  display: flex;
+  align-items: baseline;
+  margin-top: 4vmin;
+}
+
+.routine {
+  display: flex;
+  align-items: center;
+}
+
+.routine h4 {
+  margin-bottom: 0px !important;
 }

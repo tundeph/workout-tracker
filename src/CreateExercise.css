@@ -1,3 +1,9 @@
+.createExercise {
+  background-color: var(--trackfit-bg-gray-color) !important;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
 .checkbox__div {
   padding: 15px;
   padding-right: 30px;
@@ -13,4 +19,23 @@
 .checkbox__div :focus {
   border: 1px solid #881818;
   border-radius: 0px;
+}
+
+.modal__box {
+  border-radius: 15px;
+  text-align: center;
+}
+
+.modal__box .red__button {
+  margin-top: 20px !important ;
+}
+
+.modal__check {
+  font-size: 20vmin !important;
+  color: var(--trackfit-green-color);
+}
+
+.sub__text {
+  font: 3vmin "Helvetica Neue";
+  color: var(--trackfit-dark-gray-color);
 }

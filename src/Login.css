@@ -1,0 +1,55 @@
+.flex__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.home__container {
+  flex: 4;
+  background-color: var(--trackfit-bg-gray-color);
+  padding-left: 10vw;
+  padding-right: 10vw;
+  min-height: 100vh;
+  text-align: center;
+  min-width: 400px;
+}
+
+.home__container > .login__logo {
+  width: 9vw;
+  margin: 8vh 7vw 10vh 7vw;
+  min-width: 90px;
+}
+
+.login__container {
+  flex: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-right: 10vw;
+  padding-left: 6vw;
+}
+
+.login__container__inner {
+  align-self: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.red__button {
+  margin-top: 7vh !important;
+}
+
+.landing__pic {
+  margin-top: 10vh;
+  height: 50vh;
+}
+
+.form__div {
+  display: grid;
+  grid-template-columns: 45px auto;
+  align-items: center;
+  color: var(--trackfit-light-gray-color);
+}
+
+.form__div > .MuiSvgIcon-root {
+  margin-right: 0px;
+}

@@ -1,56 +1,124 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import MyNavBar from "./MyNavBar";
+import { withRouter } from "react-router-dom";
+import "./CreateExercise.css";
+import ExerciseSlider from "./ExerciseSlider";
+import { useHistory } from "react-router";
+
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 function CreateExercise() {
-  const [username, setUsername] = useState("");
-  const [description, setDescription] = useState("");
-  const [duration, setDuration] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [users, setUsers] = useState([]);
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 550,
+    bgcolor: "background.paper",
+    p: 4,
+  };
 
-  useEffect(() => {
-    axios
-      .get("users")
-      .then((res) => {
-        if (res.data.length > 0) {
-          setUsers(res.data);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const history = useHistory();
 
-  const storeExercise = (e) => {
-    e.preventDefault();
+  // const [username, setUsername] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [duration, setDuration] = useState("");
+  // const [date, setDate] = useState(new Date());
+  // const [users, setUsers] = useState([]);
 
+  const [walkingMins, setWalkingMins] = useState(0);
+  const [runningMins, setRunningMins] = useState(0);
+  const [cyclingMins, setCyclingMins] = useState(0);
+  const [swimmingMins, setSwimmingMins] = useState(0);
+
+  const storeExercise = () => {
     axios
       .post("exercises/add", {
-        username: username,
-        description: description,
-        duration: Number(duration),
-        date: Date(date),
+        walking: walkingMins,
+        running: runningMins,
+        cycling: cyclingMins,
+        swimming: swimmingMins,
       })
-      .then((res) => console.log(res.data))
+      .then()
       .catch((err) => {
         console.log(err);
       });
-
-    setUsername("");
-    setDescription("");
-    setDuration("");
-    setDate(new Date());
+    handleOpen();
   };
 
   return (
-    <div>
-      <MyNavBar LoggedIn={true} />
+    <div className="createExercise">
+      <MyNavBar />
       <div className="container">
-        <h2> Record Exercises </h2>
-        <form>
+        <h2> Enter your recent fitness </h2> <h2>routine</h2>
+        <span className="sub__text">
+          {" "}
+          How many minutes did you spend on the fitness routines listed below?{" "}
+        </span>
+        <ExerciseSlider
+          routine="walking"
+          mins={walkingMins}
+          setVal={setWalkingMins}
+        />
+        <ExerciseSlider
+          routine="running"
+          mins={runningMins}
+          setVal={setRunningMins}
+        />
+        <ExerciseSlider
+          routine="cycling"
+          mins={cyclingMins}
+          setVal={setCyclingMins}
+        />
+        <ExerciseSlider
+          routine="swimming"
+          mins={swimmingMins}
+          setVal={setSwimmingMins}
+        />
+        <div>
+          <button
+            type="submit"
+            className=" btn red__button"
+            onClick={() => {
+              storeExercise();
+            }}
+          >
+            Record Routine
+          </button>
+        </div>
+        <div>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            onBackdropClick={() => {
+              history.push("/list");
+            }}
+          >
+            <Box sx={style} className="modal__box">
+              <CheckCircleOutlineIcon className="modal__check" />
+              <h2>Successfully recorded.</h2>
+              <button
+                type="submit"
+                className=" btn red__button"
+                onClick={() => {
+                  history.push("/list");
+                }}
+              >
+                Go to Dashboard
+              </button>
+            </Box>
+          </Modal>
+        </div>
+        {/* <form>
           <div className="form-group mt-4">
             <label>Username: </label>
             <select
@@ -109,10 +177,10 @@ function CreateExercise() {
           >
             Record Exercise{" "}
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
 }
 
-export default CreateExercise;
+export default withRouter(CreateExercise);

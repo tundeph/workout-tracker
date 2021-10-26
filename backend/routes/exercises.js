@@ -8,12 +8,14 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const username = req.body.username;
-  const description = req.body.description;
-  const duration = Number(req.body.duration);
-  const date = Date.parse(req.body.date);
+  // console.log(req.body);
 
-  const newExercise = new Exercise({ username, description, duration, date });
+  const walking = Number(req.body.walking);
+  const running = Number(req.body.running);
+  const cycling = Number(req.body.cycling);
+  const swimming = Number(req.body.swimming);
+
+  const newExercise = new Exercise({ walking, running, cycling, swimming });
 
   newExercise
     .save()
