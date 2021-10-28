@@ -6,8 +6,8 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("t@t.com");
+  const [password, setPassword] = useState("t");
   const history = useHistory();
 
   useEffect(() => {
@@ -84,6 +84,11 @@ function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <div></div>
+                <div>
+                  {" "}
+                  Click the <b>Login</b> button{" "}
+                </div>
               </div>
               <div className="form-group mt-4 form__div">
                 <div></div>

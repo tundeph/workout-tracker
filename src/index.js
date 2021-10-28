@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://tundeph-trackfit.herokuapp.com/";
+// axios.defaults.baseURL = "http://localhost:3001/";
 
 ReactDOM.render(
   <React.StrictMode>
