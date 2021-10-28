@@ -16,9 +16,9 @@ function App() {
       <div className="">
         <Route path="/" exact component={Login} />
         <ProtectedRoute path="/list" exact component={ExercisesList} />
-        <ProtectedRoute path="/create" component={CreateExercise} />
-        <ProtectedRoute path="/edit/:id" component={EditExercise} />
-        <ProtectedRoute path="/user" component={CreateUser} />
+        <ProtectedRoute path="/create" exact component={CreateExercise} />
+        <ProtectedRoute path="/edit/:id" exact component={EditExercise} />
+        <ProtectedRoute path="/user" exact component={CreateUser} />
       </div>
     </Router>
   );
