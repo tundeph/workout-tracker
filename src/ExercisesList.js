@@ -47,6 +47,7 @@ function ExercisesList() {
 
   const Chart = require("chart.js");
   const ctx = "myChart";
+  // eslint-disable-next-line
   const myChart = new Chart(ctx, {
     type: "line",
     data: {
