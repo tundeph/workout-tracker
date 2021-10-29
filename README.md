@@ -1,8 +1,19 @@
 # Full Stack Development of a Fitness Tracker
 
-Working project was deployed to (https://trackfit-tundeph.netlify.app/).
+To View or Use Deployed Project, click (https://trackfit-tundeph.netlify.app/).
 
-## Stack Used
+## About 
+This project is an app that takes the number of minutes each person spent on a fitness routine and displays combine data of all entries in a Chart. It was developed to demonstrate my end-to-end app development aptitude across Software Development, Wireframing, Logo design, UX Design, Frontend Development, Backend development and deployment to server. The project involved the following expertise demonstrated -
+
+- Login, Logout and Authentication 
+- Consuming APIs 
+- Setting and Managing States 
+- Database schema design
+- Deployment to Server (MongoDB, Netlify, Heroku) 
+- Using Charts in app
+
+
+## Stacks Used
 
 - AdobeXD 
 - Adobe Illustrator 
@@ -11,16 +22,10 @@ Working project was deployed to (https://trackfit-tundeph.netlify.app/).
 - React 
 - Node.js 
 - HTML/CSS (Boostrap, Material UI) 
+- Chart.js
 - Deployed with Netlify and Heroku 
 
-## About 
-This project was developed to demonstrate my end-to-end app development skill across Software Development, Wireframing, Logo design, UX Design, Frontend Development, Backend development and deployment to server. The project involved the following expertise demonstrated-
 
-- Login, Logout and Authentication 
-- Consuming APIs 
-- etting and Managing States 
-- Deployment to Server (MongoDB, Netlify, Heroku) 
-- Using Charts in app
 
 ## 1. High-level User Activity Diagram
 ![High-level User Activity Diagram](https://github.com/tundeph/workout-tracker/blob/master/public/trackfit-3.png)
