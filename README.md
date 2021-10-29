@@ -14,7 +14,7 @@ Working project was deployed to (https://trackfit-tundeph.netlify.app/).
 - Deployed with Netlify and Heroku 
 
 
-This project was developed to demonsttrate my end-to-end app development skill across Software Development, Wireframing, Logo design, UX Design, Frontend Development, Backend development and deployment to server. The project involved the following expertise demonstrated-
+This project was developed to demonstrate my end-to-end app development skill across Software Development, Wireframing, Logo design, UX Design, Frontend Development, Backend development and deployment to server. The project involved the following expertise demonstrated-
 
 - Login, Logout and Authentication 
 - Consuming APIs 
