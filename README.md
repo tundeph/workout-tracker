@@ -24,4 +24,4 @@ This project was developed to demonstrate my end-to-end app development skill ac
 
 ## Working Images
 
-![Image of High Level User Activity](https://www.tundephoster.com/assets/img/trackfit-1.png)
+![Image of High Level User Activity](http://tundephoster.com/assets/img/trackfit-1.png)
