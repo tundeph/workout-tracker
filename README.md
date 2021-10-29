@@ -13,7 +13,7 @@ Working project was deployed to (https://trackfit-tundeph.netlify.app/).
 - HTML/CSS (Boostrap, Material UI) 
 - Deployed with Netlify and Heroku 
 
-
+## About 
 This project was developed to demonstrate my end-to-end app development skill across Software Development, Wireframing, Logo design, UX Design, Frontend Development, Backend development and deployment to server. The project involved the following expertise demonstrated-
 
 - Login, Logout and Authentication 
@@ -22,3 +22,6 @@ This project was developed to demonstrate my end-to-end app development skill ac
 - Deployment to Server (MongoDB, Netlify, Heroku) 
 - Using Charts in app
 
+## Working Images
+
+![Image of High Level User Activity](https://www.tundephoster.com/assets/img/trackfit-1.png)
