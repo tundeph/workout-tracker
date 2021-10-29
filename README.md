@@ -4,13 +4,13 @@ Working project was deployed to (https://trackfit-tundeph.netlify.app/).
 
 ## Stack Used
 
-- AdobeXD \
-- Adobe Illustrator \
-- MongoDB \
-- Express \
-- React \
-- Node.js \
-- HTML/CSS (Boostrap, Material UI) \
+- AdobeXD 
+- Adobe Illustrator 
+- MongoDB 
+- Express 
+- React 
+- Node.js 
+- HTML/CSS (Boostrap, Material UI) 
 - Deployed with Netlify and Heroku 
 
 
