@@ -22,6 +22,21 @@ This project was developed to demonstrate my end-to-end app development skill ac
 - Deployment to Server (MongoDB, Netlify, Heroku) 
 - Using Charts in app
 
-## Working Images
+## 1. High-level User Activity Diagram
+![High-level User Activity Diagram](https://github.com/tundeph/workout-tracker/blob/master/public/trackfit-3.png)
 
 
+## 2. Wireframe for the App
+![Wireframe for the Fitness App](https://github.com/tundeph/workout-tracker/blob/master/public/trackfit-1.png)
+
+
+## 3. Logo Design Sketch
+![Logo Design Sketch](https://github.com/tundeph/workout-tracker/blob/master/public/trackfit-2.png)
+
+
+## 4. UI Design in Adobe XD
+![UI Design in Adobe XD](https://github.com/tundeph/workout-tracker/blob/master/public/trackfit-4.png)
+
+
+## 5. Deployed Web App
+![Deployed Web App](https://github.com/tundeph/workout-tracker/blob/master/public/trackfit-5.png)
