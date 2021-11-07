@@ -13,7 +13,8 @@
 
 .menu__logo {
   width: 8vw;
-  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-top: 1vh;
   min-width: 90px;
 }
 
