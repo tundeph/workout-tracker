@@ -3,8 +3,12 @@
 }
 
 .navbar {
-  margin-bottom: 50px !important;
   background-color: #fff !important ;
+}
+
+.nav__container {
+  background-color: var(--trackfit-bg-gray-color);
+  padding-bottom: 3rem !important;
 }
 
 .menu__logo {

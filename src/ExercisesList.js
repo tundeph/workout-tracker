@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Exercise from "./Exercise";
 import { withRouter } from "react-router-dom";
-import MyNavBar from "./MyNavBar";
 import "./ExerciseList.css";
 
 function ExercisesList() {
@@ -46,9 +45,10 @@ function ExercisesList() {
   });
 
   const Chart = require("chart.js");
-  const ctx = "myChart";
+  const ctx = useRef("myChart");
+
   // eslint-disable-next-line
-  const myChart = new Chart(ctx, {
+  const myChart = new Chart(ctx.current, {
     type: "line",
     data: {
       labels: labelsArray,
@@ -102,7 +102,7 @@ function ExercisesList() {
 
   return (
     <div className="ExerciseList">
-      <MyNavBar LoggedIn={true} />
+      {/* <MyNavBar LoggedIn={true} /> */}
       <div className="container">
         <h2> All Fitness Data </h2>
         <div className="col-md-4  mt-5">
@@ -112,11 +112,9 @@ function ExercisesList() {
           </select>
         </div>
 
-        <canvas
-          id="myChart"
-          height="450"
-          className=" white__box__graph mt-4"
-        ></canvas>
+        <div className=" white__box__graph mt-4">
+          <canvas ref={ctx} className="canvas__style" height="300"></canvas>
+        </div>
 
         <div className="routine__div mt-5">
           <Exercise routine="Walking" duration={walking} />

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
-import MyNavBar from "./MyNavBar";
 import { withRouter } from "react-router-dom";
 import "./CreateExercise.css";
 import ExerciseSlider from "./ExerciseSlider";
@@ -55,7 +54,7 @@ function CreateExercise() {
 
   return (
     <div className="createExercise">
-      <MyNavBar />
+      {/* <MyNavBar /> */}
       <div className="container">
         <h2> Enter your recent fitness </h2> <h2>routine</h2>
         <span className="sub__text">

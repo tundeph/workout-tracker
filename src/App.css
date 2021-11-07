@@ -39,9 +39,6 @@ body {
   color: var(--trackfit-blue-color) !important;
 }
 
-.App {
-}
-
 input[type="email"],
 input[type="password"],
 select {
@@ -86,6 +83,7 @@ select {
 .red__button:hover {
   background-color: var(--trackfit-dark-red-color);
   color: #ffffff;
+  transform: scale(1.01);
 }
 
 .red__button:focus {
