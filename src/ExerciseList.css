@@ -21,10 +21,10 @@
   border-radius: 10px !important;
   background-color: #fff;
   padding: 20px;
-  max-height: 50vmin;
+  max-height: 30vmax;
 }
 
 .canvas__style {
   position: relative;
-  height: 100vh;
+  height: 1000px;
 }
