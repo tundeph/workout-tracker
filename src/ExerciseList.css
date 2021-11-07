@@ -21,7 +21,8 @@
   border-radius: 10px !important;
   background-color: #fff;
   padding: 20px;
-  max-height: 30vmax;
+  /* max-height: 30vmax; */
+  overflow: auto;
 }
 
 .canvas__style {

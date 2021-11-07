@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Exercise from "./Exercise";
 import { withRouter } from "react-router-dom";
+import { Line } from "react-chartjs-2";
 import "./ExerciseList.css";
 
 function ExercisesList() {
@@ -44,61 +45,51 @@ function ExercisesList() {
     swimmingArray.push(data.swimming);
   });
 
-  const Chart = require("chart.js");
-  const ctx = useRef("myChart");
-
-  // eslint-disable-next-line
-  const myChart = new Chart(ctx.current, {
-    type: "line",
-    data: {
-      labels: labelsArray,
-      datasets: [
-        {
-          label: "Walking",
-          data: walkingArray,
-          fill: false,
-          pointRadius: 0,
-          backgroundColor: "#f98806",
-          borderColor: "#f98806",
-          borderWidth: 2,
-        },
-        {
-          label: "Cycling",
-          data: cyclingArray,
-          fill: false,
-          pointRadius: 0,
-          backgroundColor: "#9668f7",
-          borderColor: "#9668f7",
-          borderWidth: 2,
-        },
-        {
-          label: "Running",
-          data: runningArray,
-          fill: false,
-          pointRadius: 0,
-          backgroundColor: "#72e294",
-          borderColor: "#72e294",
-          borderWidth: 2,
-        },
-        {
-          label: "Swimming",
-          data: swimmingArray,
-          fill: false,
-          pointRadius: 0,
-          backgroundColor: "#98c5ff",
-          borderColor: "#98c5ff",
-          borderWidth: 2,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
+  const graphdata = {
+    labels: labelsArray,
+    datasets: [
+      {
+        label: "Walking",
+        data: walkingArray,
+        fill: false,
+        lineTension: 0.5,
+        pointRadius: 0,
+        backgroundColor: "#f98806",
+        borderColor: "#f98806",
+        borderWidth: 2,
       },
-    },
-  });
+      {
+        label: "Cycling",
+        data: cyclingArray,
+        fill: false,
+        lineTension: 0.5,
+        pointRadius: 0,
+        backgroundColor: "#9668f7",
+        borderColor: "#9668f7",
+        borderWidth: 2,
+      },
+      {
+        label: "Running",
+        data: runningArray,
+        fill: false,
+        lineTension: 0.5,
+        pointRadius: 0,
+        backgroundColor: "#72e294",
+        borderColor: "#72e294",
+        borderWidth: 2,
+      },
+      {
+        label: "Swimming",
+        data: swimmingArray,
+        fill: false,
+        lineTension: 0.5,
+        pointRadius: 0,
+        backgroundColor: "#98c5ff",
+        borderColor: "#98c5ff",
+        borderWidth: 2,
+      },
+    ],
+  };
 
   return (
     <div className="ExerciseList">
@@ -113,7 +104,23 @@ function ExercisesList() {
         </div>
 
         <div className=" white__box__graph mt-4">
-          <canvas ref={ctx} className="canvas__style" height="300"></canvas>
+          <Line
+            data={graphdata}
+            width={300}
+            height={150}
+            options={{
+              title: {
+                display: true,
+                text: "Average Rainfall per month",
+                fontSize: 20,
+              },
+              legend: {
+                display: true,
+                position: "right",
+              },
+              maintainAspectRatio: true,
+            }}
+          />
         </div>
 
         <div className="routine__div mt-5">
