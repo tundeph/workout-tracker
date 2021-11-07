@@ -1,5 +1,4 @@
 import React from "react";
-import MyNavBar from "./MyNavBar";
 import { Switch } from "react-router-dom";
 import ExercisesList from "./ExercisesList";
 import EditExercise from "./EditExercise";
@@ -10,7 +9,6 @@ import ProtectedRoute from "./ProtectedRoute";
 function In() {
   return (
     <div>
-      <MyNavBar LoggedIn={true} />
       <Switch>
         <ProtectedRoute path="/list" exact component={ExercisesList} />
         <ProtectedRoute path="/create" exact component={CreateExercise} />

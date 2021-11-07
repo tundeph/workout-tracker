@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import "./CreateExercise.css";
 import ExerciseSlider from "./ExerciseSlider";
 import { useHistory } from "react-router";
-
+import MyNavBar from "./MyNavBar";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -54,7 +54,7 @@ function CreateExercise() {
 
   return (
     <div className="createExercise">
-      {/* <MyNavBar /> */}
+      <MyNavBar />
       <div className="container">
         <h2> Enter your recent fitness </h2> <h2>routine</h2>
         <span className="sub__text">

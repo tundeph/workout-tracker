@@ -3,6 +3,7 @@ import axios from "axios";
 import Exercise from "./Exercise";
 import { withRouter } from "react-router-dom";
 import { Line } from "react-chartjs-2";
+import MyNavBar from "./MyNavBar";
 import "./ExerciseList.css";
 
 function ExercisesList() {
@@ -93,7 +94,7 @@ function ExercisesList() {
 
   return (
     <div className="ExerciseList">
-      {/* <MyNavBar LoggedIn={true} /> */}
+      <MyNavBar LoggedIn={true} />
       <div className="container">
         <h2> All Fitness Data </h2>
         <div className="col-md-4  mt-5">
