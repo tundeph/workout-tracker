@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
 import { withRouter } from "react-router-dom";
@@ -21,7 +21,7 @@ function CreateExercise() {
     p: 4,
   };
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const history = useHistory();
