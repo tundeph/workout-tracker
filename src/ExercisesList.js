@@ -13,13 +13,22 @@ function ExercisesList() {
     showExercises();
   }, []);
 
-  const showExercises = () => {
-    axios
-      .get("exercises/", {})
-      .then((res) => {
-        setListFigures(res.data);
-      })
-      .catch((err) => console.log(err));
+  // const showExercises = () => {
+  //   axios
+  //     .get("exercises/", {})
+  //     .then((res) => {
+  //       setListFigures(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
+  const showExercises = async () => {
+    try {
+      let fig = await axios.get("exercises/");
+      setListFigures(fig.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   let running = 0;
