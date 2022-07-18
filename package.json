@@ -20,7 +20,7 @@
     "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
     "react-query": "^3.34.16",
-    "react-router-dom": "^5.3.0",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "2.1.8",
     "web-vitals": "^1.1.2"
   },
@@ -49,7 +49,6 @@
   },
   "description": "To View or Use Deployed Project, click (https://trackfit-tundeph.netlify.app/).",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tundeph/workout-tracker.git"
