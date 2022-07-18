@@ -1,0 +1,32 @@
+.navbar-collapse {
+  justify-content: flex-end !important;
+}
+
+.navbar {
+  background-color: #fff !important ;
+}
+
+.nav__container {
+  background-color: var(--trackfit-bg-gray-color);
+  padding-bottom: 3rem !important;
+}
+
+.menu__logo {
+  width: 8vw;
+  margin-bottom: 3vh;
+  margin-top: 1vh;
+  min-width: 90px;
+}
+
+.nav-link {
+  font: bold 18px "Helvetica Neue";
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+.nav-link a {
+  text-decoration: none;
+  margin-top: 2vh;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
