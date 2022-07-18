@@ -1,30 +1,38 @@
-import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import React, { useContext } from "react"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "react-query"
-import ExercisesList from "./ExercisesList"
-import EditExercise from "./EditExercise"
-import CreateExercise from "./CreateExercise"
-import CreateUser from "./CreateUser"
-import ProtectedRoute from "./ProtectedRoute"
-import Login from "./Login"
+import ExercisesList from "./pages/ExercisesList/ExercisesList"
+import CreateExercise from "./pages/CreateExercise/CreateExercise"
+import Login from "./pages/Login/Login"
+import { AuthContext } from "../src/context/AuthContext"
+import Navbar from "./components/MyNavBar/MyNavBar"
 
+//styles
+import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 
-const queryClient = new QueryClient()
-
 function App() {
+  const queryClient = new QueryClient()
+  const { user } = useContext(AuthContext)
+
   return (
     <div>
-      <QueryClientProvider client={queryClient}>
-        <Router>
-          <Route path="/" exact component={Login} />
-          <ProtectedRoute path="/list" exact component={ExercisesList} />
-          <ProtectedRoute path="/create" exact component={CreateExercise} />
-          <ProtectedRoute path="/edit/:id" exact component={EditExercise} />
-          <ProtectedRoute path="/user" exact component={CreateUser} />
-        </Router>
-      </QueryClientProvider>
+      <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          {user && <Navbar />}
+          <Routes>
+            <Route
+              path="/"
+              element={!user ? <Login /> : <Navigate to="/list" />}
+            />
+            <Route
+              path="/list"
+              element={user ? ExercisesList : <Navigate to="/" />}
+            />
+            <Route path="/create" element={CreateExercise} />
+          </Routes>
+        </QueryClientProvider>
+      </BrowserRouter>
     </div>
   )
 }
